@@ -7,21 +7,24 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import { useRouter } from "next/router";
+import styles from '../styles/Search.module.css';
+import Dropdown from 'rsuite/Dropdown';
+import { Categories } from "../helpers/categories";
+
 
 const Search: React.FC = () =>{
 
-    const [searchValue, setSearchValue] = useState('');
-    // whatever we type in into the input field it goes into searchValue
+    const [searchValue, setSearchValue] = useState('');//initial value 
+            //actual param, setter
+
     const route = useRouter();
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event.target.value.toString());
     };
 
-    const onSearching = () => {
-        route.push(`/result?query=${encodeURIComponent(searchValue)}`);
-        // route.push('/result?query=${name}');
+    const navigateToNewPage = () => {
+        route.push(`/result?query=${encodeURIComponent(searchValue)}`); 
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -33,11 +36,13 @@ const Search: React.FC = () =>{
         }
     }
 
-    const [isOpen , setIsOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState("");
 
-    const toggleDown = () => {
-        setIsOpen((prev) => !prev);
-    }
+    const navigateToCategoryPage = () => {
+        if (selectedCategory) {
+            route.push(`/category/${selectedCategory}`);
+            }
+    };
 
     return(
         <main>
@@ -53,7 +58,7 @@ const Search: React.FC = () =>{
                         />
                         <button 
                             className="rounded-lg p-2"
-                            onClick={onSearching}>
+                            onClick={navigateToNewPage}>
                             <SearchIcon/>
                         </button>
                     </div>
@@ -65,19 +70,24 @@ const Search: React.FC = () =>{
                 <nav>
                     <ul className="flex justify-between mt-4 mx-4">
                         <li><Link href="/"><HomeIcon/>Home</Link></li>
-                        <li><button onClick={toggleDown}>
-                            Categories
-                        </button>
-                            {isOpen && (
-                                <div className="absolute p-2 bg-rose-300 rounded-lg shadow-lg border-2"
-                                    style={{top:'80%', left:'27.5%',transform:'translate(-50%)'}}
-                                >
-                                    <a className="block p-2 hover:bg-rose-200 rounded-sm border-b-2" href="/">Option: 1</a>
-                                    <a className="block p-2 hover:bg-rose-200 rounded-sm border-b-2" href="/">Option: 2</a>
-                                    <a className="block p-2 hover:bg-rose-200 rounded-sm" href="/">Option: 3</a>
-                                </div>
-                            )}
-                        </li>
+                        
+                        {/* Dropdown Category*/}
+                        <Dropdown className="border-none" title={"Category"} trigger={['click','hover']}
+                            size="lg" as={'li'}>    
+                           <div className="bg-rose-200 rounded-lg p-2">
+                                {
+                                    Categories.map((category) => (
+                                        <Dropdown.Item key={category.name} 
+                                                onClickCapture={()=>setSelectedCategory(`${(category.name)}`)}
+                                                onClick={navigateToCategoryPage}
+                                                className="p-2 border-b-2 border-red-300 hover:bg-red-300"
+                                                >
+                                            {category.name}
+                                        </Dropdown.Item>
+                                    ))}
+                           </div>
+                        </Dropdown>
+                        
                         <li><Link href="/"><WhatshotIcon/>Trending</Link></li>
                         <li><Link href="/">About</Link></li>
                         <li><Link href="/">Social</Link></li>

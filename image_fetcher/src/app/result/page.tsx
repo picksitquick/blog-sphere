@@ -11,7 +11,7 @@ import SearchIcon from '@mui/icons-material/Search'
 const SearchResults: React.FC = () => {
 
   const [searchValue, setSearchValue] = useState('');
-  const [searchSuggestions , setSearchSuggestions] = useState<string[]>([]);
+  // const [searchSuggestions , setSearchSuggestions] = useState<string[]>([]);
   const route = useRouter();
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +22,6 @@ const SearchResults: React.FC = () => {
 
   const onSearching = () => {
     route.push(`/result?query=${encodeURIComponent(searchValue)}`);
-    // route.push('/');
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -36,11 +35,6 @@ const SearchResults: React.FC = () => {
 
   const [searchResults, setSearchResults] = useState(BlogsData); // Initialize with all blogs
   
-//   const router = useRouter();
-/**using useRouter from next/router is not longer supported for page navs, use next/navigation 
- * now to get query in useRouter we used to do router.query directly but now you need to use
- * useSearchParams which automatically fetches params in url.
- */
   const searchParams = useSearchParams(); 
   const query = searchParams.get('query');
 
@@ -48,19 +42,12 @@ const SearchResults: React.FC = () => {
   const performSearch = (searchQuery: string) => {
     const filteredBlogs = BlogsData.filter((blog) => {
         const titleMatches = blog.title.toLowerCase().includes(searchQuery.toLowerCase());
-        const contentMatches = blog.content.toLowerCase().includes(searchQuery.toLowerCase());
-
         if(searchQuery.length === 0 || searchQuery === ' ')return null;
         else {
-            return titleMatches || contentMatches;
+            return titleMatches;
         }
     }
     );
-    if (filteredBlogs.length > 0) {
-        setSearchSuggestions(filteredBlogs.map((blog) => blog.title));
-      } else {
-        setSearchSuggestions(['No matches found']);
-      }
     setSearchResults(filteredBlogs);
   };
 
@@ -68,19 +55,13 @@ const SearchResults: React.FC = () => {
     if (query && query.trim() !== '') {
       performSearch(query as string);
     }
-    else{
-        setSearchSuggestions([]);
-    }
   }, [query]);
 
   const PAGE_LIMIT = 5;
   const [currentPage , setCurrentPage] = useState(1);//initial value
   const totalPages = Math.ceil(searchResults.length / PAGE_LIMIT);
   const paginatedBlogs = searchResults.slice((currentPage - 1) * PAGE_LIMIT, currentPage * PAGE_LIMIT);
-  // const receive = await fetch(get,'test_url');
-  // slice-->(starting idx , ending idx)-> (0,5)->0,1,2,3,4
-  // (0,10): at 1st: (0,5) -> 0,1,2,3,4
-  // at 2nd stage: (5,10) ->5,6,7,8,9 
+  
 
   const handleNextPage = () => {
     if(currentPage < totalPages){
@@ -118,21 +99,6 @@ const SearchResults: React.FC = () => {
                     >
                     <SearchIcon />
                 </button>
-                <div>
-                    {searchSuggestions.length > 0 && (
-                        <ul className="absolute z-10 mt-2 bg-emerald-300 border border-gray-300 rounded-lg shadow-lg">
-                            {searchSuggestions.map((suggestion, index) => (
-                                <li
-                                key={index}
-                                className="px-4 py-2 cursor-pointer hover:bg-emerald-400 rounded-lg"
-                                onClick={() => setSearchValue(suggestion)}
-                                >
-                                {suggestion}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
             </div>
             {/* Add other links here */}
             </Toolbar>
@@ -141,8 +107,8 @@ const SearchResults: React.FC = () => {
             <h1 className='bg-gray-300 p-2'>Search Results for {query}</h1>
             <div> 
                 {paginatedBlogs.map((blog) => (
+                    // <BlogCard key={blog.id} blog={blog}/>
                     <BlogCard key={blog.id} blog={blog}/>
-                    // <link src />
                 ))}
             </div>
         <div className='flex justify-center mt-4'>
