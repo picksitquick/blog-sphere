@@ -70,7 +70,7 @@ export default function Home(){
         </div>
       </div>
       <Comments
-        commentsUrl="http://localhost:3000"
+        commentsUrl="/"
         currentUserId = "1"/>
       <Newsletter />
       <Footer />
