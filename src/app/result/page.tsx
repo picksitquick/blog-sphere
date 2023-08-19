@@ -98,7 +98,7 @@ const SearchResults: React.FC = () => {
               
            
         </div>
-        <div className='bg-violet-200 m-20 ml-56 h-16 w-1/2 text-gray-800 m-0 shadow-xl'>
+        <div className='bg-violet-200 m-20 ml-56 h-16 w-1/2 text-gray-800 shadow-xl'>
             <div className='inline-block align-text-bottom text-xl m-5 font-mono'>
             Search Results for {query} ....
             </div>

@@ -61,7 +61,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   return (
     <div className='pt-10 bg-violet-100'>
       <h3 className="text-2xl text-gray-700 pb-10 text-center font-mono">Comments</h3>
-      <div className='container mx-auto md:px-2 py-16 w-1/2 shadow border rounded border-gray-700 w-9/12 py-3 px-3 text-slate-700 focus:outline-none focus:shadow-outline flex-row'>
+      <div className='container mx-auto md:px-2 py-16 w-1/2 shadow border rounded border-gray-700 px-3 text-slate-700 focus:outline-none focus:shadow-outline flex-row'>
         <div className="text-base text-slate-700 font-mono">Write comment  </div>
       <CommentForm submitLabel="GO" handleSubmit={addComment} />
       <div className="py-5 text-slate-500">
