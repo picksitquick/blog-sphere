@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import {ImHome} from "react-icons/im"
 import Link from 'next/link'
 import Button from '@mui/material/Button';
@@ -6,10 +6,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 
-
-
 export default function Header(){
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
