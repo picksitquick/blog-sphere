@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import styles from "./Background.module.css";
-import { Route, Routes, useLocation } from 'react-router-dom';
+// import { Route, Routes, useLocation } from 'react-router-dom';
 
 
 
