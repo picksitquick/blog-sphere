@@ -1,9 +1,7 @@
 "use client";
-
-
 import { useState, useEffect } from "react";
-import CommentForm from "./CommentForm";
-import Comment from "./Comment";
+import CommentForm from "./commentform";
+import Comment from "./comment";
 import {
   getComments as getCommentsApi,
   createComment as createCommentApi,
