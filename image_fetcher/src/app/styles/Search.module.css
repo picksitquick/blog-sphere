@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'customFont';
+    src: url('C:/Users/dhruv/OneDrive/Documents/StanleyRootsPersonalUseRegular-VGYZB.ttf') format('truetype');
+}
+
+.container {
+    background-color: blueviolet;
+}
+
+.topSection {
+    background-color: rgb(247, 152, 247);
+    margin-bottom: 2px;
+    padding: 8px;
+}
+
+.searchBox {
+    border-radius: 32px;
+    padding: 4px;
+    color: black;
+}
+
+.searchBox:focus{
+    outline: none;
+}
+
+.header {
+    background-color: rgb(182, 91, 182);
+    padding: 8px;
+}
+
+.button {
+    background-color: rgb(134, 74, 134);
+    transition: all;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 9999px;
+}
+
+.button:hover{
+    background-color: rebeccapurple;
+}
+
+.navbar {
+    font-family: 'customFont';
+    font-size: large;
+    display: flex;
+    /* flex: auto; */
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+/* 
+.dropdown-menu:active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+  }
+.dropdown-menu::after{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed) ease;
+  } */
+/* .dropdown-menu{
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    width: 200px;
+  } */

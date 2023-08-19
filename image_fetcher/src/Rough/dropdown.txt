@@ -1,0 +1,96 @@
+<li>
+    <button onClick={toggleDown}>
+        Categories
+    </button>
+        {isOpen && (
+        <div className="absolute p-2 bg-rose-300 rounded-lg shadow-lg border-2"
+        onClickCapture={(event)=>handleCategoryChange}    
+        style={{top:'80%', left:'27.5%',transform:'translate(-50%)'}}
+        >
+            <button className="block p-2 hover:bg-rose-200 rounded-sm border-b-2"
+                onClick={navigateToCategoryPage}>
+                    Option: 1
+            </button>
+            <button className="block p-2 hover:bg-rose-200 rounded-sm border-b-2"
+                onClick={navigateToCategoryPage}>
+                    Option: 2
+            </button>
+            <button className="block p-2 hover:bg-rose-200 rounded-sm"
+                onClick={navigateToCategoryPage}>
+                    Option: 3
+            </button>
+            {/* <a className="block p-2 hover:bg-rose-200 rounded-sm border-b-2" href="/">Option: 1</a> */}
+            {/* <a className="block p-2 hover:bg-rose-200 rounded-sm border-b-2" href="/">Option: 2</a> */}
+            {/* <a className="block p-2 hover:bg-rose-200 rounded-sm" href="/">Option: 3</a> */}
+        </div>
+    )} 
+    </li>
+
+    
+
+    // const [isOpen , setIsOpen] = useState(false);
+
+    // const toggleDown = () => {
+    //     setIsOpen((prev) => !prev);
+    // }
+
+    //   const router = useRouter();
+/**using useRouter from next/router is not longer supported for page navs, use next/navigation 
+ * now to get query in useRouter we used to do router.query directly but now you need to use
+ * useSearchParams which automatically fetches params in url.
+ */
+
+ // route.push('/');
+
+ // const handleCategoryChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    //     setSelectedCategory(event.target.value);
+    // };
+
+ // if (filteredBlogs.length > 0) {
+    //     setSearchSuggestions(filteredBlogs.map((blog) => blog.title));
+    //   } else {
+    //     setSearchSuggestions(['No matches found']);
+    //   }
+
+    // else{
+    //     setSearchSuggestions([]);
+    // }
+
+    // const receive = await fetch(get,'test_url');
+  // slice-->(starting idx , ending idx)-> (0,5)->0,1,2,3,4
+  // (0,10): at 1st: (0,5) -> 0,1,2,3,4
+  // at 2nd stage: (5,10) ->5,6,7,8,9 
+
+          // const contentMatches = blog.content.toLowerCase().includes(searchQuery.toLowerCase());
+
+<div>
+                    {/* {searchSuggestions.length > 0 && (
+                        <ul className="absolute z-10 mt-2 bg-emerald-300 border border-gray-300 rounded-lg shadow-lg">
+                            {searchSuggestions.map((suggestion, index) => (
+                                <li
+                                key={index}
+                                className="px-4 py-2 cursor-pointer hover:bg-emerald-400 rounded-lg"
+                                onClick={() => setSearchValue(suggestion)}
+                                >
+                                {suggestion}
+                                </li>
+                            ))}
+                        </ul>
+                    )} */}
+                </div>
+
+                {/* <Dropdown.Item onClickCapture={()=>setSelectedCategory("Option: 2")} 
+                                                onClick={navigateToCategoryPage}
+                                                className="p-2 border-b-2 border-red-300 hover:bg-red-300">
+                                    Anime
+                                </Dropdown.Item>
+                                <Dropdown.Item onClickCapture={()=>setSelectedCategory("Option: 3")} 
+                                                onClick={navigateToCategoryPage}
+                                                className="p-2 border-b-2 border-red-300 hover:bg-red-300">
+                                    Science
+                                </Dropdown.Item>
+                                <Dropdown.Item onClickCapture={()=>setSelectedCategory("Option: 4")} 
+                                                onClick={navigateToCategoryPage}
+                                                className="p-2 hover:bg-red-300">
+                                    Pyschology
+                                </Dropdown.Item> */}
