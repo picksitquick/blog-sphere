@@ -36,7 +36,7 @@ export default function page() {
         </div>
        
          <div className='text-slate-100 text-center font-mono mt-48'>
-        <Link href="http://localhost:3000/homepage">Click to discover</Link>
+        <Link href="/homepage">Click to discover</Link>
         </div>
     </> 
   )
