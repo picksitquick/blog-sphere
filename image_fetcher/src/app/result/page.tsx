@@ -77,6 +77,10 @@ const SearchResults: React.FC = () => {
 
   return (
     <div>
+      <head>
+        <title>Hello</title>
+        <meta>This is a Search result page which uses components ... and delivers images from ...</meta>
+      </head>
         <div>
             <AppBar position="sticky" color='primary'>
             <Toolbar>
