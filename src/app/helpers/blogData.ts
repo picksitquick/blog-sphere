@@ -9,7 +9,7 @@ export const BlogsData= [
       content: 'Envisioning the Next Generation of Wireless Connectivity',
       author: "innovaTech",
       date: "23.07.23",
-      link: "http://localhost:3000/blogs/5G-1",
+      link: "/blogs/5G-1",
       img: "/5G1.jpg",
       tags: 'signals',
       category: '5G'
@@ -22,7 +22,7 @@ export const BlogsData= [
       content: 'Paving the Way for a Connected Urban Future',
       author: "5G rev",
       date: "1.07.23",
-      link: "http://localhost:3000/blogs/5G-2",
+      link: "/blogs/5G-2",
       img: "/5G2.jpg",
       tags: 'smartcity',
       category: '5G'
@@ -33,7 +33,7 @@ export const BlogsData= [
         content: 'The Evolution of Traditional Banking',
         author: "Finance Enthusiast",
         date: "2.07.23",
-        link: "http://localhost:3000/blogs/BC-1",
+        link: "/blogs/BC-1",
         img: "/BC1.jpg",
         tags: "currency",
         category: 'blockchain'
@@ -44,7 +44,7 @@ export const BlogsData= [
         content: 'Redefining Digital Ownership and Art Market',
         author: "anonymous user",
         date: "3.07.23",
-        link: "http://localhost:3000/blogs/BC-2",
+        link: "/blogs/BC-2",
         img: "/BC1.jpg",
         tags: "bitcoin",
         category: 'blockchain'
@@ -55,7 +55,7 @@ export const BlogsData= [
         content: 'Transforming Diagnostics and Patient Care',
         author: "AI geek",
         date: "4.07.23",
-        link: "http://localhost:3000/blogs/AI-1",
+        link: "/blogs/AI-1",
         img: "/AI1.jpg",
         tags: "ai",
         category: 'AI'
@@ -66,7 +66,7 @@ export const BlogsData= [
         content: 'AI-Powered Virtual Assistants: The Future of Customer Support',
         author: "Jon Doe",
         date: "5.07.23",
-        link: "http://localhost:3000/blogs/AI-2",
+        link: "/blogs/AI-2",
         img: "/AI2.jpg",
         tags: "analytics",
         category: 'AI'
@@ -77,7 +77,7 @@ export const BlogsData= [
         content: 'Reinforcing Cybersecurity in a Perimeterless World',
         author: "Crypto_Dude",
         date: "6.07.23",
-        link: "http://localhost:3000/blogs/CP-1",
+        link: "/blogs/CP-1",
         img: "/CS1.jpg",
         tags: "cyberfraud",
         category: 'cyber security'
@@ -88,7 +88,7 @@ export const BlogsData= [
         content: 'Balancing Convenience and Privacy',
         author: "Security_Exec",
         date: "7.07.23",
-        link: "http://localhost:3000/blogs/CP-2",
+        link: "/blogs/CP-2",
         img: "/CS2.jpg",
         tags: "hackers",
         category: 'cyber security'
@@ -99,7 +99,7 @@ export const BlogsData= [
         content: 'This is the content of sample blog 1',
         author: "some name",
         date: "8.07.23",
-        link: "http://localhost:3000/blogs/5G-1",
+        link: "/blogs/5G-1",
         img: "/5G1.jpg",
         tags: 'sample',
         category: 'sample'
@@ -110,7 +110,7 @@ export const BlogsData= [
         content: 'This is the content of sample Blog 2',
         author: "new name",
         date: "9.07.23",
-        link: "http://localhost:3000/blogs/5G-1",
+        link: "/blogs/5G-1",
         img: "/5G1.jpg",
         tags: 'random',
         category: 'sample'

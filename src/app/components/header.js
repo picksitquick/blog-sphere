@@ -23,7 +23,7 @@ export default function Header(){
     <header className="bg-violet-100">
       <div className="xl:container xl:mx-auto flex flex-col items-center sm:flex-row sm:justify-between text-center py-3">
         <div className='text-gray-800 hover:text-gray-500'>
-          <Link href="http://localhost:3000/homepage"><ImHome /></Link>
+          <Link href="/homepage"><ImHome /></Link>
         </div>
         <div>
           <Button
